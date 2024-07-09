@@ -1,15 +1,14 @@
 import {
   Calendar,
   CircleCheck,
-  CircleDashed,
   MapPin,
   Plus,
   Settings2,
-  UserCog,
 } from "lucide-react";
 import { useState } from "react";
 import { CreateActivityModal } from "./create-activity-modal";
 import { ImportantLinks } from "./important-links";
+import { Guests } from "./guests";
 
 export function TripDetailsPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] =
@@ -102,37 +101,7 @@ export function TripDetailsPage() {
 
           <div className="w-full h-px bg-zinc-800" />
 
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold">Convidados</h2>
-            <div className="space-y-5">
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-1.5 flex-1">
-                  <span className="block font-medium text-zinc-100">
-                    Jessica White
-                  </span>
-                  <span className="block text-sm truncate text-zinc-400">
-                    jessica.white44@yahoo.com
-                  </span>
-                </div>
-                <CircleDashed className="size-5 text-zinc-400" />
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <div className="space-y-1.5 flex-1">
-                  <span className="block font-medium text-zinc-100">
-                    Dr. Rita Pacocha
-                  </span>
-                  <span className="block text-sm truncate text-zinc-400">
-                    lacy.stiedemann@gmail.com
-                  </span>
-                </div>
-                <CircleDashed className="size-5 text-zinc-400" />
-              </div>
-            </div>
-            <button className="flex items-center justify-center w-full gap-2 px-5 font-medium rounded-lg h-11 bg-zinc-800 text-zinc-200 hover:bg-zinc-700">
-              <UserCog className="size-5 text-zinc-400" />
-              Gerenciar convidados
-            </button>
-          </div>
+          <Guests />
         </div>
       </main>
 
