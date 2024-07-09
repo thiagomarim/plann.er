@@ -134,9 +134,15 @@ export function App() {
                 className="flex items-center flex-1 gap-2 text-left"
               >
                 <UserRoundPlus className="size-5 text-zinc-400" />
-                <span className="flex-1 text-lg text-zinc-400">
-                  Quem estará na viagem?
-                </span>
+                {emailsToInvite.length > 0 ? (
+                  <span className="flex-1 text-lg text-zinc-100">
+                    {emailsToInvite.length} pessoa(s) convidada(s)
+                  </span>
+                ) : (
+                  <span className="flex-1 text-lg text-zinc-400">
+                    Quem estará na viagem?
+                  </span>
+                )}
               </button>
 
               <div className="w-px h-6 bg-zinc-800" />
