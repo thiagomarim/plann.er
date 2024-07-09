@@ -7,11 +7,9 @@ import { InviteGuestsStep } from "./steps/invite-guests-step";
 
 export function CreateTripPage() {
   const navigate = useNavigate();
-
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false);
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false);
   const [isConfirmTripModalOpen, setIsConfirmTripModalOpen] = useState(false);
-
   const [emailsToInvite, setEmailsToInvite] = useState([
     "diego@rocketseat.com.br",
     "john@acme.com",
@@ -69,7 +67,7 @@ export function CreateTripPage() {
   }
 
   function createTrip(event: FormEvent<HTMLFormElement>) {
-    event?.preventDefault();
+    event.preventDefault();
 
     navigate("/trips/123");
   }
@@ -90,6 +88,7 @@ export function CreateTripPage() {
             isGuestsInputOpen={isGuestsInputOpen}
             openGuestsInput={openGuestsInput}
           />
+
           {isGuestsInputOpen && (
             <InviteGuestsStep
               emailsToInvite={emailsToInvite}
@@ -116,10 +115,10 @@ export function CreateTripPage() {
 
       {isGuestsModalOpen && (
         <InviteGuestsModal
-          addNewEmailToInvite={addNewEmailToInvite}
           emailsToInvite={emailsToInvite}
-          removeEmailFromInvites={removeEmailFromInvites}
+          addNewEmailToInvite={addNewEmailToInvite}
           closeGuestsModal={closeGuestsModal}
+          removeEmailFromInvites={removeEmailFromInvites}
         />
       )}
 
