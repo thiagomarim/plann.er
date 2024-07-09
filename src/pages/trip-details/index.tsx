@@ -7,7 +7,6 @@ import {
   Plus,
   Settings2,
   Tag,
-  User,
   UserCog,
   X,
 } from "lucide-react";
